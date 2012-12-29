@@ -22,7 +22,6 @@
         
         // echo module informations
         echo "Amount of modules: ".$amountOfModules;
-        echo $activities[0]['time'];
         
         for ($i = 0; $i < $amountOfModules; $i++){
             if ($i == 0){
