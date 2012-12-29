@@ -25,4 +25,4 @@ $activities = $lectio->getActivities('04-01-2013');
 
 h2. Credits
 
-Credits to @jakobadam for various Lectio parsing.
+Credits to jakobadam (https://github.com/jakobadam) for various Lectio parsing.
