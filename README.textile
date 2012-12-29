@@ -22,3 +22,7 @@ Once initialized, you are able to use any of the methods in the SDK.
 $activities = $lectio->getActivities('04-01-2013');
 </pre>
 </notextile>
+
+h2. Credits
+
+Credits to @jakobadam for various Lectio parsing.
