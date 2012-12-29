@@ -27,6 +27,33 @@ class lectio{
     }
     
     /**
+    * Get student information
+    * 
+    * Parses the following student information: name, class and school
+    */ 
+    public function getStudent(){
+        $htmlContent = file_get_html(sprintf("https://www.lectio.dk/lectio/%s/SkemaNy.aspx?type=elev&elevid=%s", $this->schoolid, $this->studentid));
+
+        if ($htmlContent){
+            $websiteTitle = $htmlContent->find('title', 0);
+            $websiteTitle = $websiteTitle->text();
+        }
+        
+        $nameStart = strpos($websiteTitle, "Eleven") + 7;
+        $nameEnd = strpos($websiteTitle, ",");
+        $studentname = substr($websiteTitle, $nameStart, ($nameEnd-$nameStart));
+        
+        $classStart = strpos($websiteTitle, ",") + 2;
+        $classEnd = strpos($websiteTitle, " -");
+        $classname = substr($websiteTitle, $classStart, ($classEnd-$classStart));
+        
+        $schoolStart = strpos($websiteTitle, "Lectio") + 9;
+        $schoolname = substr($websiteTitle, $schoolStart);
+        
+        return array('name'=>$studentname, 'class'=>$classname, 'school'=>$schoolname);
+    }
+    
+    /**
     * Get activities by date
     * 
     * Retrieves the activities of a day as an array with the following information: state, time, homework and class

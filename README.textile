@@ -1,6 +1,6 @@
 h1. Lectio PHP SDK
 
-An unofficial SDK for parsing informations about activities from a Lectio timetable.
+An unofficial SDK for parsing activities from a Lectio timetable.
 
 h2. Initiating The SDK
 
@@ -15,6 +15,13 @@ $lectio = new lectio("SCHOOL_ID", "STUDENT_ID");
 h2. SDK Methods
 
 Once initialized, you are able to use any of the methods in the SDK. 
+
+*Get Student Information*
+<notextile>
+<pre>
+$student = $lectio->getStudent();
+</pre>
+</notextile>
 
 *Get Activities Of Day*
 <notextile>
