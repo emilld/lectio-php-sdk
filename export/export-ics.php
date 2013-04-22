@@ -10,7 +10,7 @@ $schoolAddress = "Nakskov Gymnasium";
 
 // define header
 header('Content-type: text/calendar; charset=utf-8');
-header('Content-Disposition: inline; filename=calendar.ics');
+header('Content-Disposition: inline; filename=lectiosdk.ics');
 
 // begin ics file
 $output = "BEGIN:VCALENDAR
