@@ -78,7 +78,7 @@ class lectio{
             foreach($timetable->find('tr') as $tr){
                 $tdIndex = 0;
                 
-                foreach  ($tr->find('td') as $td){
+                foreach ($tr->find('td') as $td){
                     if ($tdIndex == $dayOfWeek){
                         foreach ($td->find('a') as $link){
                             if ($link->href != null){
@@ -111,6 +111,7 @@ class lectio{
         $note = null;
         $homework = null;
         $status = null;
+        $classRoom = null;
         
         foreach ($table->find('tr') as $tr){
             $th = $tr->find('th', 0);
@@ -130,6 +131,8 @@ class lectio{
                     $homework = $this->sanitize($tdText);
                 } else if ($thText == "Status:"){
                     $status = $tdText;
+                } else if ($thText == "Lokaler:"){
+                    $classRoom = $tdText;
                 }
             }
         }
@@ -148,7 +151,7 @@ class lectio{
             $homeworkBundle = $homeworkBundle . $note;
         }
         
-        return array('state'=>$status, 'time'=>$time, 'homework'=>$homeworkBundle, 'class'=>$class);
+        return array('state'=>$status, 'time'=>$time, 'homework'=>$homeworkBundle, 'class'=>$class, 'classroom'=>$classRoom);
     }
     
     /**
