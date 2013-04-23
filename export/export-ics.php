@@ -41,7 +41,7 @@ for ($i = 0; $i <= 14; $i++){
 			$dateStart = date('Y-m-d', strtotime($date))." 08:00:00";
 			$dateEnd = date('Y-m-d', strtotime($date))." 09:35:00";
 		} else if (strpos($activities[$j]['time'], "2. modul") != false){
-			$dateStart = date('Y-m-d', strtotime($date))." 09:35:00";
+			$dateStart = date('Y-m-d', strtotime($date))." 09:55:00";
 			$dateEnd = date('Y-m-d', strtotime($date))." 11:30:00";
 		} else if (strpos($activities[$j]['time'], "3. modul") != false){
 			$dateStart = date('Y-m-d', strtotime($date))." 12:00:00";
