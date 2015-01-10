@@ -2,8 +2,8 @@
 
 <?php
     // initialize lectio sdk
-    require_once("lectio.php");
-    $lectio = new lectio("402", "4763366305");
+    require_once("../lectio.php");
+    $lectio = new lectio("600", "6936775795");
 ?>
 
 <html>
@@ -16,7 +16,7 @@
     
     <?php
         // parse the activities of given day, 29-01-2013
-        $activities = $lectio->getActivities('29-01-2013');
+        $activities = $lectio->getActivities('06-01-2015');
         
         $amountOfModules = sizeof($activities);
         

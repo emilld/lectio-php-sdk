@@ -2,15 +2,15 @@
 
 // initialize lectio sdk
 require_once('../lectio.php');
-$lectio = new lectio("402", "4763366305");
+$lectio = new lectio("600", "6936775795");
 
 // constants used for events
 $timezone = "Europe/Copenhagen";
-$schoolAddress = "Nakskov Gymnasium";
+$schoolAddress = "Odense Katedralskole";
 
 // define header
-header('Content-type: text/calendar; charset=utf-8');
-header('Content-Disposition: inline; filename=lectiosdk.ics');
+// header('Content-type: text/calendar; charset=utf-8');
+// header('Content-Disposition: inline; filename=lectiosdk.ics');
 
 // begin ics file
 $output = "BEGIN:VCALENDAR
@@ -39,16 +39,16 @@ for ($i = 0; $i <= 14; $i++){
 		// TODO: this currently only works for my school's specific module system
 		if (strpos($activities[$j]['time'], "1. modul") != false){
 			$dateStart = date('Y-m-d', strtotime($date))." 08:00:00";
-			$dateEnd = date('Y-m-d', strtotime($date))." 09:35:00";
+			$dateEnd = date('Y-m-d', strtotime($date))." 09:40:00";
 		} else if (strpos($activities[$j]['time'], "2. modul") != false){
-			$dateStart = date('Y-m-d', strtotime($date))." 09:55:00";
+			$dateStart = date('Y-m-d', strtotime($date))." 09:50:00";
 			$dateEnd = date('Y-m-d', strtotime($date))." 11:30:00";
 		} else if (strpos($activities[$j]['time'], "3. modul") != false){
 			$dateStart = date('Y-m-d', strtotime($date))." 12:00:00";
-			$dateEnd = date('Y-m-d', strtotime($date))." 13:35:00";
+			$dateEnd = date('Y-m-d', strtotime($date))." 13:40:00";
 		} else if (strpos($activities[$j]['time'], "4. modul") != false){
-			$dateStart = date('Y-m-d', strtotime($date))." 13:45:00";
-			$dateEnd = date('Y-m-d', strtotime($date))." 15:20:00";
+			$dateStart = date('Y-m-d', strtotime($date))." 13:50:00";
+			$dateEnd = date('Y-m-d', strtotime($date))." 15:30:00";
 		} else {
 			// TODO: full day activity
 			$dateStart = date('Y-m-d', strtotime($date));
